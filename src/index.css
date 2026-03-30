@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Outfit:wght@100;200;300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 3%;
+    --foreground: 43 30% 90%;
+
+    --card: 0 0% 6%;
+    --card-foreground: 43 30% 90%;
+
+    --popover: 0 0% 6%;
+    --popover-foreground: 43 30% 90%;
+
+    --primary: 43 72% 55%;
+    --primary-foreground: 0 0% 3%;
+
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 43 30% 90%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 43 10% 50%;
+
+    --accent: 43 72% 55%;
+    --accent-foreground: 0 0% 3%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 43 20% 18%;
+    --input: 43 20% 18%;
+    --ring: 43 72% 55%;
+
+    --radius: 0.25rem;
+
+    --gold: 43 72% 55%;
+    --gold-light: 43 60% 70%;
+    --gold-dark: 43 80% 35%;
+    --noir: 0 0% 3%;
+    --noir-light: 0 0% 8%;
+    --noir-medium: 0 0% 12%;
+
+    --font-display: 'Cormorant Garamond', serif;
+    --font-body: 'Outfit', sans-serif;
+
+    --gradient-gold: linear-gradient(135deg, hsl(43 80% 35%), hsl(43 72% 55%), hsl(43 60% 70%), hsl(43 72% 55%), hsl(43 80% 35%));
+    --gradient-gold-text: linear-gradient(135deg, hsl(43 60% 70%), hsl(43 72% 55%), hsl(43 60% 70%));
+    --shadow-gold: 0 0 40px hsl(43 72% 55% / 0.15);
+    --shadow-gold-glow: 0 0 80px hsl(43 72% 55% / 0.25);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .text-gold-gradient {
+    background: var(--gradient-gold-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gold-gradient {
+    background: var(--gradient-gold);
+  }
+
+  .border-gold-gradient {
+    border-image: var(--gradient-gold) 1;
+  }
+
+  .glow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+
+  .glow-gold-strong {
+    box-shadow: var(--shadow-gold-glow);
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(0 0% 3%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(43 72% 55% / 0.3);
+  border-radius: 2px;
+}
